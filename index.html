@@ -41,13 +41,18 @@
         <div class="col">
             <h1 class="fw-bold mb-3">Foizlarni hisoblash</h1>
             <form>
-                <label for="total">Jami ($):</label>
-                <input type="number" id="total" placeholder="Dollor kiriting" required>
-                <br><br>
 
-                <label for="percentage">Foiz (%):</label>
-                <input type="number" id="percentage" placeholder="Foiz kiriting" required>
-                <br><br>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input id="total" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">%</span>
+                    <input id="percentage" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
+                </div>
+
             </form>
 
             <div>
