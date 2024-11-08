@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foizlarni hisoblash</title>
+    <script>
+        function calculatePercentage() {
+            const total = parseFloat(document.getElementById("total").value);
+            const percentage = parseFloat(document.getElementById("percentage").value);
+
+            if (isNaN(total) || isNaN(percentage)) {
+                document.getElementById("result").textContent = ""; // Yaroqsiz ma'lumotlarni kiritganda natijalarni tozalash
+                return;
+            }
+
+            // Foizni hisoblash
+            const result = (total * percentage) / 100;
+
+            // Natijani ko'rsatish
+            document.getElementById("result").textContent = `${percentage}% ${total}$ dan = ${result}$`;
+        }
+
+        window.onload = function() {
+            document.getElementById("total").addEventListener("input", calculatePercentage);
+            document.getElementById("percentage").addEventListener("input", calculatePercentage);
+        };
+    </script>
+</head>
+<body>
+
+<h1>Foizlarni hisoblash</h1>
+<form>
+    <label for="total">Jami ($):</label>
+    <input type="number" id="total" placeholder="Summa kiriting" required>
+    <br><br>
+
+    <label for="percentage">Foiz (%):</label>
+    <input type="number" id="percentage" placeholder="Foiz kiriting" required>
+    <br><br>
+</form>
+
+<div>
+    <p id="result"></p>
+</div>
+
+</body>
+</html>
