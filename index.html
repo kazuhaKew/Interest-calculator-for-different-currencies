@@ -36,32 +36,35 @@
 </head>
 <body class="bg-light">
 
-<div class="container text-center bg-white rounded-5 mt-5 p-5 shadow">
-    <div class="row align-items-center">
-        <div class="col">
-            <h1 class="fw-bold mb-3">Foizlarni hisoblash</h1>
-            <form>
 
-                <div class="input-group mb-3">
-                    <span class="input-group-text">$</span>
-                    <input id="total" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div class="text-center bg-white rounded-5 mt-5 p-5 shadow">
+
+                <h1 class="fw-bold mb-3">Foizlarni hisoblash</h1>
+                <form>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <input id="total" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
+                    </div>
+
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">%</span>
+                        <input id="percentage" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
+                    </div>
+
+                </form>
+
+                <div>
+                    <h2 class="mt-4 text-bg-success rounded-5" id="result"></h2>
                 </div>
-
-
-                <div class="input-group mb-3">
-                    <span class="input-group-text">%</span>
-                    <input id="percentage" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
-                </div>
-
-            </form>
-
-            <div>
-                <h2 class="text-bg-success rounded-5" id="result"></h2>
             </div>
+
         </div>
         <!-- /.col -->
     </div>
-</div>
 
 
 <div class="container">
