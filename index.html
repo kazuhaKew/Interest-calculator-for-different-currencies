@@ -26,7 +26,7 @@
                 return;
             }
             const result = (total * percentage) / 100;
-            document.getElementById("result-" + id).textContent = `${percentage}% от ${total} ${id} = ${result} ${id}`;
+            document.getElementById("result-" + id).textContent = `${total} ${id} › ${percentage}% = ${result} ${id}`;
         }
 
         window.onload = function() {
