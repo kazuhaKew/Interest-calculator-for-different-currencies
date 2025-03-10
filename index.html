@@ -18,24 +18,29 @@
           crossorigin="anonymous">
 
     <script>
-        function calculatePercentage(id) {
-            const total = parseFloat(document.getElementById("total-" + id).value);
-            const percentage = parseFloat(document.getElementById("percentage-" + id).value);
-            if (isNaN(total) || isNaN(percentage)) {
-                document.getElementById("result-" + id).textContent = ""; // Очистить результат при некорректном вводе
-                return;
-            }
-            const result = (total * percentage) / 100;
-            document.getElementById("result-" + id).textContent = `${total} ${id} › ${percentage}% = ${result} ${id}`;
-        }
+    function formatNumber(number) {
+        return new Intl.NumberFormat('uz-UZ').format(number);
+    }
 
-        window.onload = function() {
-            const currencies = ["uzs", "rub", "usd", "eur", "jpy", "nzd", "aud", "chf", "gbp"];
-            currencies.forEach(currency => {
-                document.getElementById("total-" + currency).addEventListener("input", () => calculatePercentage(currency));
-                document.getElementById("percentage-" + currency).addEventListener("input", () => calculatePercentage(currency));
-            });
-        };
+    function calculatePercentage(id) {
+        const total = parseFloat(document.getElementById("total-" + id).value);
+        const percentage = parseFloat(document.getElementById("percentage-" + id).value);
+        if (isNaN(total) || isNaN(percentage)) {
+            document.getElementById("result-" + id).textContent = ""; // Очистить результат при некорректном вводе
+            return;
+        }
+        const result = (total * percentage) / 100;
+        document.getElementById("result-" + id).textContent =
+            `${formatNumber(total)} ${id} › ${formatNumber(percentage)}% = ${formatNumber(result)} ${id}`;
+    }
+
+    window.onload = function() {
+        const currencies = ["uzs", "rub", "usd", "eur", "jpy", "nzd", "aud", "chf", "gbp"];
+        currencies.forEach(currency => {
+            document.getElementById("total-" + currency).addEventListener("input", () => calculatePercentage(currency));
+            document.getElementById("percentage-" + currency).addEventListener("input", () => calculatePercentage(currency));
+        });
+    };
     </script>
 </head>
 <body class="bg-light">
